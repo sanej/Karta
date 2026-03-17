@@ -1,0 +1,14 @@
+{
+  "name": "karta-bridge",
+  "version": "0.1.0",
+  "description": "WebSocket bridge between Twilio Media Streams and Gemini Live",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0",
+    "dotenv": "^16.4.0"
+  }
+}

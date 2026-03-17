@@ -1,0 +1,27 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Node.js
+node_modules/
+bridge/node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config (may contain secrets)
+.env
+.env.local
+config.local.toml
+
+# Task storage (personal data)
+tasks/

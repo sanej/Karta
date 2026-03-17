@@ -1,0 +1,150 @@
+# Karta Configuration
+# Copy this to ~/.config/karta/config.toml and customize
+
+# =============================================================================
+# PRINCIPAL PROFILE - Your information and values
+# =============================================================================
+
+[principal]
+name = "Your Name"
+location = "San Francisco, CA"
+email = "you@example.com"
+phone = "+1-555-123-4567"
+
+[principal.values]
+# How should the agent handle honesty about its nature?
+honesty = "Always disclose AI status if directly asked"
+
+# How protective should we be with your information?
+# Options: conservative, moderate, open
+privacy_level = "moderate"
+
+# How much financial risk are you comfortable with?
+# Options: low, moderate, high
+financial_risk = "moderate"
+
+# How do you prioritize speed vs thoroughness?
+# Options: relaxed, balanced, urgent
+time_sensitivity = "balanced"
+
+[principal.boundaries]
+# Maximum amount the agent can approve without asking you
+max_auto_approve_amount = 500.0
+
+# Information that CAN be shared
+share_allowed = ["name", "email", "phone", "address"]
+
+# Information that must NEVER be shared
+share_never = ["ssn", "bank_account", "credit_card", "password", "income"]
+
+# Actions that always require your approval
+never_commit_without_approval = [
+    "in-person meetings",
+    "financial agreements",
+    "legal documents",
+    "medical decisions"
+]
+
+# Actions that should immediately escalate to you
+always_escalate = ["legal threats", "contract signing"]
+
+[principal.preferences]
+# Your preferred appointment times
+preferred_times = ["morning", "after 2pm"]
+
+# Communication style preference
+# Options: professional, friendly, direct
+communication_style = "professional"
+
+# How long (minutes) to wait on hold before escalating
+hold_patience_minutes = 15
+
+# What to do if you get voicemail
+# Options: leave_message, keep_trying, escalate
+voicemail_strategy = "leave_message"
+
+
+# =============================================================================
+# AGENT CONFIGURATION - Karta's personality
+# =============================================================================
+
+[agent]
+# The agent's name (what it calls itself)
+name = "Karta"
+
+[agent.personality]
+# Overall communication tone
+# Options: professional, warm-professional, friendly, direct
+tone = "warm-professional"
+
+# Negotiation approach
+# Options: collaborative, collaborative-firm, anchoring, accommodating
+negotiation_style = "collaborative-firm"
+
+# How patient with delays
+# Options: high, medium, low
+patience = "medium"
+
+# How assertive in pursuing goals
+# Options: low, moderate, high
+assertiveness = "moderate"
+
+# How detailed in communications
+# Options: terse, concise, detailed
+verbosity = "concise"
+
+[agent.values]
+respect = "Always be respectful to the person on the other end"
+persistence = "Don't give up easily but know when to escalate"
+transparency = "Be upfront about acting on someone's behalf"
+
+[agent.operations]
+# Maximum call duration in minutes
+max_call_duration_minutes = 30
+
+# How many times to retry a failed call
+retry_attempts = 3
+
+# Seconds between retries
+retry_delay_seconds = 60
+
+# Whether to record calls (for your review)
+record_calls = false
+
+
+# =============================================================================
+# TELEPHONY - Phone call provider
+# =============================================================================
+
+[telephony]
+# Provider to use
+# Options: mock, twilio, telnyx
+provider = "mock"
+
+# --- Twilio (most popular, good docs) ---
+# twilio_account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# twilio_auth_token = "your_auth_token_here"
+# twilio_phone_number = "+1-555-000-0000"
+
+# --- Telnyx (25-45% cheaper, owns infrastructure) ---
+# telnyx_api_key = "your_telnyx_api_key_here"
+# telnyx_phone_number = "+1-555-000-0000"
+
+
+# =============================================================================
+# VOICE ENGINE - AI conversation provider
+# =============================================================================
+
+[voice]
+# Provider to use
+# Options: mock, gemini, openai
+provider = "mock"
+
+# Gemini API key (required if provider = "gemini")
+# gemini_api_key = "your_gemini_api_key_here"
+
+# Model to use (optional, defaults vary by provider)
+# model = "gemini-2.0-flash-exp"
+
+# OpenAI API key (required if provider = "openai")
+# openai_api_key = "your_openai_api_key_here"

@@ -1,0 +1,73 @@
+[package]
+name = "karta"
+version = "0.1.0"
+edition = "2021"
+description = "A voice-native AI executive assistant that acts on your behalf"
+authors = ["Sanej"]
+license = "MIT"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+
+# CLI framework
+clap = { version = "4.4", features = ["derive", "env"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# HTTP client for API calls
+reqwest = { version = "0.11", features = ["json", "stream"] }
+
+# WebSocket for real-time audio streams
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+futures-util = "0.3"
+
+# Terminal UI
+crossterm = "0.27"
+ratatui = "0.25"
+
+# Logging and tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID for task IDs
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+# Async channels
+async-channel = "2.1"
+
+# Directory paths
+dirs = "5.0"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Async trait support
+async-trait = "0.1"
+
+# Base64 encoding
+base64 = "0.21"
+
+# Environment variables
+dotenvy = "0.15"
+
+# Audio processing (for future local audio)
+# rodio = "0.17"  # Uncomment when adding local audio
+
+[dev-dependencies]
+tokio-test = "0.4"
+
+[[bin]]
+name = "karta"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
