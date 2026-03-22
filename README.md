@@ -138,11 +138,21 @@ karta/
 - [ ] Call recording and summaries
 - [ ] Deploy as a service
 
+## Use Cases
+
+Real situations where this helps:
+
+- **Pharmacy calls** - Checking prescription status, refills, hold times
+- **Rental inquiries** - Asking about availability, pricing, amenities across multiple properties
+- **Appointment scheduling** - Doctors, dentists, services that don't have online booking
+- **Customer service hold hell** - Insurance, airlines, utilities
+- **Phone anxiety** - Some people genuinely struggle with phone calls
+
 ## Why This Exists
 
 Built to explore: "Can an AI make routine phone calls for me?"
 
-Tested successfully for casual calls (asking about dinner). Less clear if there's a real daily need - most things are online now. But for phone-anxiety folks or hold-time-hell situations, this could be useful.
+Tested successfully for real calls. The need isn't daily, but when you DO need it (pharmacy hold, rental hunting), it's genuinely useful.
 
 ## Contributing
 
